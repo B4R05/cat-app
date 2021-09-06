@@ -2,13 +2,13 @@
 
 #### Running locally
 
-### `git clone repo name`
+### `git clone git@github.com:B4R05/cat-app.git`
 
 to clone the app locally
 
 ### `npm install`
 
-to install all the required packages
+to install all the required packages after you `cd` into `cat-app`
 
 ### `npm start`
 
