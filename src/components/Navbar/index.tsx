@@ -11,10 +11,11 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // ensures correct tab highlighted if navigated at any time
     if (activeItem !== location.pathname) {
       setActiveItem(location.pathname);
     }
-  });
+  }, [activeItem, location.pathname]);
 
   const handleItemClick = (navItem: NavType): void => {
     setActiveItem(navItem);

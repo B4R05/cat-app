@@ -53,9 +53,11 @@ const Uploader = () => {
     imgdata.append('file', files[0]);
 
     try { 
-      await uploadAPI('/images/upload', { data: imgdata });
-      toast.success('Image successfully uploaded! Now redirecting you to the home page.');
-      setTimeout(() => history.push('/'), 3000);
+      const response = await uploadAPI('/images/upload', { data: imgdata });
+      if (response.status === 201) {
+        toast.success('Image successfully uploaded! Now redirecting you to the home page.');
+        setTimeout(() => history.push('/'), 3000);
+      }
     } catch (error: any) {
       toast.error(error?.response?.data?.message || 'An error occured.');
     } finally {
