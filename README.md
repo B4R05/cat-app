@@ -1,18 +1,20 @@
-### Get Started
+### Live Demo
 
-#### Running locally
+https://cat-app-cf3cc.web.app/
 
-### `git clone repo name`
+### Running locally
+
+#### `git clone repo name`
 
 to clone the app locally
 
-### `npm install`
+#### `npm install`
 
 to install all the required packages
 
-### `npm start`
+#### `npm start`
 
-Before you run this command ensure you have the right `REACT_APP_API_KEY` in the local `.env` file to run the app on locally
+Before you run this command ensure you have the right `REACT_APP_API_KEY` (use your own or get in touch) in the local `.env` file to run the app on locally.
 
 ### Features
 
