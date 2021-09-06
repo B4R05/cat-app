@@ -1,10 +1,6 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from 'react-router-dom';
-
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import CacheRoute, { CacheSwitch } from 'react-router-cache-route';
 import Upload from '../pages/Upload';
 import Home from '../pages/Home';
 import Navbar from '../components/Navbar';
@@ -15,14 +11,10 @@ const Routes = () => {
       <div>
         <Navbar/>
 
-        <Switch>
-          <Route path="/upload">
-            <Upload />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <CacheSwitch>
+          <Route exact path="/upload" component={Upload} />
+          <CacheRoute exact path="/" cacheKey="/" component={Home} />
+        </CacheSwitch>
       </div>
     </Router>
   );

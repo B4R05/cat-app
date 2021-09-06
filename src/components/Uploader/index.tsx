@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { refreshByCacheKey } from 'react-router-cache-route';
 import toast from 'react-hot-toast';
 import { Button } from 'semantic-ui-react';
 import { useDropzone } from 'react-dropzone';
@@ -55,6 +56,8 @@ const Uploader = () => {
     try { 
       const response = await uploadAPI('/images/upload', { data: imgdata });
       if (response.status === 201) {
+        // invalidates Home cache to fetch latest data
+        refreshByCacheKey('/');
         toast.success('Image successfully uploaded! Now redirecting you to the home page.');
         setTimeout(() => history.push('/'), 3000);
       }

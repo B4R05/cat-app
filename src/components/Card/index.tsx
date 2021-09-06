@@ -5,9 +5,7 @@ import { API } from '../../api';
 import { ratingStyle, voteStyle } from './styles';
 import { ICard } from './types';
 
-const FALLBACK = 'https://react.semantic-ui.com/images/avatar/large/matthew.png';
-
-const CatCard = ({ src = FALLBACK, score = 9999, imageID, favID = null }: ICard) => {
+const CatCard = ({ src, score = 9999, imageID, favID = null }: ICard) => {
   const [favouriteId, setFavouriteId] = useState<number | null>(favID);
   const [totalScore, setTotalScore] = useState<number>(score);
 
